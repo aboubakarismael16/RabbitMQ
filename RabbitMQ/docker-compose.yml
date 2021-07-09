@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  rabbitmp3:
+    image: rabbitmq:3-management
+    container_name: 'rabbitmq'
+    environment:
+      RABBITMQ_ERLANG_COOKIE: 'secret cookie here'
+#      RABBITMQ_NODENAME: ismael@13628
+    volumes:
+      - .~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+      - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    ports:
+    - 15672:15672
+    - 5672:5672
+#  network :
+#    - rabbitmq_default
+#networks:
+#  rabbitmq_default:
+#    driver: bridge
