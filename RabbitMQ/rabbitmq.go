@@ -301,3 +301,91 @@ func (r *RabbitMQ) ReceiveRouting() {
 	fmt.Println("Press CTRL+C to quit\n")
 	<-forever
 }
+
+func NewRabbitMQTopic(exchange string, routingKey string) *RabbitMQ {
+	rabbitmq := NewRabbitMQ("",exchange, routingKey)
+	var err error
+	//connection
+	rabbitmq.conn, err = amqp.Dial(rabbitmq.MqUrl)
+	rabbitmq.failOnErr(err, "Failed to connect rabbitmq!")
+
+	//channel
+	rabbitmq.channel, err = rabbitmq.conn.Channel()
+	rabbitmq.failOnErr(err, "Failed to open channel")
+
+	return  rabbitmq
+}
+
+func (r *RabbitMQ) PublishTopic(message string)  {
+	err := r.channel.ExchangeDeclare(
+		r.Exchange,
+		"topic",
+		true,
+		false,
+		false,
+		false,
+		nil,
+		)
+	r.failOnErr(err, "Failed to declare an exchange")
+
+	err = r.channel.Publish(
+		r.Exchange,
+		r.Key,
+		false,
+		false,
+		amqp.Publishing{
+			ContentType: "text/plain",
+			Body: []byte(message),
+		})
+}
+
+func (r *RabbitMQ) ReceiveTopic()  {
+	err := r.channel.ExchangeDeclare(
+		r.Exchange,
+		"topic",
+		true,
+		false,
+		false,
+		false,
+		nil,
+		)
+	r.failOnErr(err, "Failed to declare an exchange")
+
+	q, err := r.channel.QueueDeclare(
+		"",
+		false,
+		false,
+		true,
+		false,
+		nil,
+		)
+	r.failOnErr(err, "Failed to declare a queue")
+
+	err = r.channel.QueueBind(
+		q.Name,
+		r.Key,
+		r.Exchange,
+		false,
+		nil,
+		)
+
+	messages, err := r.channel.Consume(
+		q.Name,
+		"",
+		true,
+		false,
+		false,
+		false,
+		nil,
+		)
+
+	forever := make(chan bool)
+	go func() {
+		for d := range messages {
+			log.Printf("Received a message: %s", d.Body)
+		}
+	}()
+
+	fmt.Println("Press CTRL+C to quit")
+	<- forever
+}

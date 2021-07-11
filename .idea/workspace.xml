@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3029c978-69af-431c-9398-c5f89d4a1140" name="Default Changelist" comment="">
+    <list default="true" id="3029c978-69af-431c-9398-c5f89d4a1140" name="Default Changelist" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/RabbitMQTopic/publishTopic.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicAll.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicTwo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RabbitMQ/rabbitmq.go" beforeDir="false" afterPath="$PROJECT_DIR$/RabbitMQ/rabbitmq.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RabbitMQRouting/receiveImoocTwo.go" beforeDir="false" afterPath="$PROJECT_DIR$/RabbitMQRouting/receiveImoocTwo.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,10 +23,17 @@
   </component>
   <component name="GOROOT" url="file:///snap/go/7736" />
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="aboubakar ismael &lt;aboubakarismael16@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1usmz8YO3iY80MzJ6Pu7Es2hINx" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -42,25 +51,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
-  <component name="RunManager" selected="Go Build.go build publishRouting.go">
-    <configuration name="go build mainPub.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="rabbitmq" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/RabbitMQPubSub/mainPub.go" />
-      <method v="2" />
-    </configuration>
-    <configuration name="go build mainSub2.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
-      <module name="rabbitmq" />
-      <working_directory value="$PROJECT_DIR$" />
-      <kind value="FILE" />
-      <package value="rabbitmq" />
-      <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/RabbitMQPubSub/mainSub2.go" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Go Build.go build publishTopic.go">
     <configuration name="go build publishRouting.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
       <working_directory value="$PROJECT_DIR$" />
@@ -70,13 +61,31 @@
       <filePath value="$PROJECT_DIR$/RabbitMQRouting/publishRouting.go" />
       <method v="2" />
     </configuration>
-    <configuration name="go build receiveImoocOne.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+    <configuration name="go build publishTopic.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="rabbitmq" />
       <working_directory value="$PROJECT_DIR$" />
       <kind value="FILE" />
       <package value="rabbitmq" />
       <directory value="$PROJECT_DIR$" />
-      <filePath value="$PROJECT_DIR$/RabbitMQRouting/receiveImoocOne.go" />
+      <filePath value="$PROJECT_DIR$/RabbitMQTopic/publishTopic.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build receiveImoocTopicAll.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="rabbitmq" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicAll.go" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build receiveImoocTopicTwo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="rabbitmq" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="FILE" />
+      <package value="rabbitmq" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicTwo.go" />
       <method v="2" />
     </configuration>
     <configuration name="go build receiveImoocTwo.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
@@ -90,11 +99,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Go Build.go build publishTopic.go" />
+        <item itemvalue="Go Build.go build receiveImoocTopicTwo.go" />
+        <item itemvalue="Go Build.go build receiveImoocTopicAll.go" />
         <item itemvalue="Go Build.go build publishRouting.go" />
         <item itemvalue="Go Build.go build receiveImoocTwo.go" />
-        <item itemvalue="Go Build.go build receiveImoocOne.go" />
-        <item itemvalue="Go Build.go build mainPub.go" />
-        <item itemvalue="Go Build.go build mainSub2.go" />
       </list>
     </recent_temporary>
   </component>
@@ -112,5 +121,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>
 </project>
