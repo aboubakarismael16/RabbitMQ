@@ -6,6 +6,7 @@
       <change afterPath="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicAll.go" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/RabbitMQTopic/receiveImoocTopicTwo.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/RabbitMQ/rabbitmq.go" beforeDir="false" afterPath="$PROJECT_DIR$/RabbitMQ/rabbitmq.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
